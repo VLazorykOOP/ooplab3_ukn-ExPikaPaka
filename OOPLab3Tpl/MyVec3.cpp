@@ -90,40 +90,40 @@ void Vec3::print() {
 }
 
 
-Vec3* Vec3::operator=(Vec3& a) {
+Vec3& Vec3::operator=(Vec3& a) {
 	x = a.x;
 	y = a.y;
 	z = a.z;
 	isError = a.isError;
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator+(Vec3& a) {
+Vec3& Vec3::operator+(Vec3& a) {
 	x += a.x;
 	y += a.y;
 	z += a.z;
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator+=(Vec3& a) {
+Vec3& Vec3::operator+=(Vec3& a) {
 	x += a.x;
 	y += a.y;
 	z += a.z;
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator-(Vec3& a) {
+Vec3& Vec3::operator-(Vec3& a) {
 	x -= a.x;
 	y -= a.y;
 	z -= a.z;
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator-=(Vec3& a) {
+Vec3& Vec3::operator-=(Vec3& a) {
 	x -= a.x;
 	y -= a.y;
 	z -= a.z;
-	return this;
+	return *this;
 }
 
 float Vec3::operator*(Vec3& a) {
@@ -134,22 +134,22 @@ float Vec3::operator*=(Vec3& a) {
 	return (y * a.z - z * a.y) - (x * a.z - z * a.x) + (x * a.y - y * a.x);
 }
 
-Vec3* Vec3::operator*(float a) {
+Vec3& Vec3::operator*(float a) {
 	x *= a;
 	y *= a;
 	z *= a;
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator*=(float a) {
+Vec3& Vec3::operator*=(float a) {
 	x *= a;
 	y *= a;
 	z *= a;
-	return this;
+	return *this;
 }
 
 
-Vec3* Vec3::operator/(float a) {
+Vec3& Vec3::operator/(float a) {
 	if (!a) {
 		isError = 1;
 	}
@@ -158,9 +158,9 @@ Vec3* Vec3::operator/(float a) {
 		y /= a;
 		z /= a;
 	}
-	return this;
+	return *this;
 }
-Vec3* Vec3::operator/=(float a) {
+Vec3& Vec3::operator/=(float a) {
 	if (!a) {
 		isError = 1;
 	}
@@ -169,10 +169,10 @@ Vec3* Vec3::operator/=(float a) {
 		y /= a;
 		z /= a;
 	}
-	return this;
+	return *this;
 }
 
-Vec3* Vec3::operator/(Vec3 &a) {
+Vec3& Vec3::operator/(Vec3 &a) {
 	if (!a.x && !a.y && !a.z) {
 		isError = 1;
 	}
@@ -181,9 +181,9 @@ Vec3* Vec3::operator/(Vec3 &a) {
 		y /= a.y;
 		z /= a.z;
 	}
-	return this;
+	return *this;
 }
-Vec3* Vec3::operator/=(Vec3 &a) {
+Vec3& Vec3::operator/=(Vec3 &a) {
 	if (!a.x && !a.y && !a.z) {
 		isError = 1;
 	}
@@ -192,7 +192,7 @@ Vec3* Vec3::operator/=(Vec3 &a) {
 		y /= a.y;
 		z /= a.z;
 	}
-	return this;
+	return *this;
 }
 
 bool Vec3::operator<(Vec3& a) {

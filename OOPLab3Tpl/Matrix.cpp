@@ -133,11 +133,11 @@ void Matrix::print() {
 	}
 }
 
-Matrix* Matrix::operator=(Matrix& a) {
+Matrix& Matrix::operator=(Matrix& a) {
 	matrix = a.matrix;
 	row = a.row;
 	collum = a.collum;
-	return this;
+	return *this;
 }
 
 bool Matrix::operator==(Matrix& a) {
@@ -152,7 +152,7 @@ bool Matrix::operator==(Matrix& a) {
 	return 0;
 }
 
-Matrix* Matrix::operator+(Matrix& a) {
+Matrix& Matrix::operator+(Matrix& a) {
 	if ((row == a.row) && (collum = a.collum)) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -163,10 +163,10 @@ Matrix* Matrix::operator+(Matrix& a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator+=(Matrix& a) {
+Matrix& Matrix::operator+=(Matrix& a) {
 	if ((row == a.row) && (collum = a.collum)) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -177,10 +177,10 @@ Matrix* Matrix::operator+=(Matrix& a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator-(Matrix& a) {
+Matrix& Matrix::operator-(Matrix& a) {
 	if ((row == a.row) && (collum = a.collum)) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -191,10 +191,10 @@ Matrix* Matrix::operator-(Matrix& a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator-=(Matrix& a) {
+Matrix& Matrix::operator-=(Matrix& a) {
 	if ((row == a.row) && (collum = a.collum)) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -205,30 +205,30 @@ Matrix* Matrix::operator-=(Matrix& a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator*(double a) {
+Matrix& Matrix::operator*(double a) {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < collum; j++) {
 			setX(i, j, getX(i, j) * a);
 		}
 
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator*=(double a) {
+Matrix& Matrix::operator*=(double a) {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < collum; j++) {
 			setX(i, j, getX(i, j) * a);
 		}
 	}
 
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator/(double a) {
+Matrix& Matrix::operator/(double a) {
 	if (a) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -239,10 +239,10 @@ Matrix* Matrix::operator/(double a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }
 
-Matrix* Matrix::operator/=(double a) {
+Matrix& Matrix::operator/=(double a) {
 	if (a) {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < collum; j++) {
@@ -253,5 +253,5 @@ Matrix* Matrix::operator/=(double a) {
 	else {
 		isError = 1;
 	}
-	return this;
+	return *this;
 }

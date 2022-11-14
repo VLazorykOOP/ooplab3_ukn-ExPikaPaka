@@ -21,15 +21,15 @@ public:
 	bool error();
 	void print();
 
-	Matrix* operator=(Matrix& a);
+	Matrix& operator=(Matrix& a);
 	bool operator==(Matrix& a);
-	Matrix* operator+(Matrix& a);
-	Matrix* operator+=(Matrix& a);
-	Matrix* operator-(Matrix& a);
-	Matrix* operator-=(Matrix& a);
-	Matrix* operator*(double a);
-	Matrix* operator*=(double a);
-	Matrix* operator/(double a);
-	Matrix* operator/=(double a);
+	Matrix& operator+(Matrix& a);
+	Matrix& operator+=(Matrix& a);
+	Matrix& operator-(Matrix& a);
+	Matrix& operator-=(Matrix& a);
+	Matrix& operator*(double a);
+	Matrix& operator*=(double a);
+	Matrix& operator/(double a);
+	Matrix& operator/=(double a);
 };
 
